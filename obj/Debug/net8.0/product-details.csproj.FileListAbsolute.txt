@@ -5,6 +5,9 @@ C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\bac
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\product-details.runtimeconfig.json
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\product-details.dll
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\product-details.pdb
+C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\AWSSDK.DynamoDBv2.dll
+C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\AWSSDK.Extensions.NETCore.Setup.dll
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -17,6 +20,7 @@ C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\bac
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\obj\Debug\net8.0\product-details.csproj.CoreCompileInputs.cache
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\obj\Debug\net8.0\product-details.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\obj\Debug\net8.0\product-details.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\obj\Debug\net8.0\product-details.sourcelink.json
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\obj\Debug\net8.0\staticwebassets\msbuild.product-details.Microsoft.AspNetCore.StaticWebAssets.props
@@ -31,6 +35,3 @@ C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\bac
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\obj\Debug\net8.0\product-details.pdb
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\obj\Debug\net8.0\product-details.genruntimeconfig.cache
 C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\obj\Debug\net8.0\ref\product-details.dll
-C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\AWSSDK.Core.dll
-C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\AWSSDK.DynamoDBv2.dll
-C:\Users\krishna.kommineni\OneDrive - CES Limited\Desktop\CES\sample-project\backend\product-details\bin\Debug\net8.0\AWSSDK.Extensions.NETCore.Setup.dll
