@@ -3,6 +3,11 @@ using Amazon.DynamoDBv2;
 using ProductModule.Interfaces;
 using ProductModule.Repository;
 using ProductModule.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using ProductModule.Models;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,6 +63,35 @@ builder.Services.AddRateLimiter(options =>
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
 });
 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+    var key = Encoding.UTF8.GetBytes(jwtSettings.SecretKey);
+
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings.Issuer,
+        ValidAudience = jwtSettings.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ClockSkew = TimeSpan.Zero
+    };
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .Build();
+});
+
 var app = builder.Build();
 
 app.UseSwagger();
@@ -66,7 +100,7 @@ app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 
 app.UseMiddleware<CatchApplicationLevelExceptions>();
-
+app.UseAuthentication();
 
 app.MapControllers();
 
