@@ -20,5 +20,11 @@ namespace ProductModule.Services
         {
             return await _repository.AddProductsToCategoryAsync(products);
         }
+
+        public async Task<List<ProductSpecifications>> AddProductSpecificationsAsync(List<ProductSpecifications> productSpecs)
+        {
+            return await _repository.AddProductSpecificationsAsync(productSpecs);
+        }
+
     }
 }

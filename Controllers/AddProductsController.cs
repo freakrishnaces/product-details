@@ -31,5 +31,13 @@ namespace ProductModule.Controllers
             var result = await _addProductService.AddProductsToCategoryAsync(products);
             return Ok(result);
         }
+
+        [HttpPost]
+        [Route("/addProductDetails")]
+        public async Task<ActionResult<List<ProductSpecifications>>> AddProductSpecifications([FromBody] List<ProductSpecifications> productSpecs)
+        {
+            var result = await _addProductService.AddProductSpecificationsAsync(productSpecs);
+            return Ok(true);
+        }
     }
 }

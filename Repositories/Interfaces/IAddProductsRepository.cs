@@ -6,5 +6,6 @@ namespace ProductModule.Interfaces
     {
         Task<ProductCategory> AddProductCategoryAsync(string categoryName);
         Task<bool> AddProductsToCategoryAsync(List<Product> products);
+        Task<List<ProductSpecifications>> AddProductSpecificationsAsync(List<ProductSpecifications> productSpecs);
     }
 }

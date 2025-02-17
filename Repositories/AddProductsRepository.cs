@@ -1,4 +1,5 @@
 using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.Model;
 using ProductModule.Interfaces;
 using ProductModule.Models;
@@ -8,10 +9,12 @@ namespace ProductModule.Repository
     public class AddProductsRepository : IAddProductsRepository
     {
         private readonly IAmazonDynamoDB _amazonDynamoDB;
+        private readonly IDynamoDBContext _dynamoDbContext;
         private const string TableName = "ProductCatalog";
         public AddProductsRepository(IAmazonDynamoDB amazonDynamoDB)
         {
             _amazonDynamoDB = amazonDynamoDB;
+            _dynamoDbContext = new DynamoDBContext(_amazonDynamoDB);
         }
         public async Task<ProductCategory> AddProductCategoryAsync(string categoryName)
         {
@@ -101,6 +104,21 @@ namespace ProductModule.Repository
             {
                 throw;
             }
+        }
+
+        public async Task<List<ProductSpecifications>> AddProductSpecificationsAsync(List<ProductSpecifications> productSpecs)
+        {
+            var batchWrite = _dynamoDbContext.CreateBatchWrite<ProductSpecifications>();
+        
+            foreach (var product in productSpecs)
+            {
+                product.PK = ProductSpecifications.CreatePK(product.ProductId);
+                product.SK = ProductSpecifications.CreateMetadataSK(product.ProductId);
+            }
+            
+            batchWrite.AddPutItems(productSpecs);
+            await batchWrite.ExecuteAsync();
+            return productSpecs;
         }
 
         private string GenerateUniqueCategoryId()
